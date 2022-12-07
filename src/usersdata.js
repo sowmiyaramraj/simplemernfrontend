@@ -8,49 +8,34 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
-// import jwt from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 
 function Usersdata(){
-//   const navigate=useNavigate();
-  const [userdata,setUserdata]=useState([
-    {
-        id:1,
-        name:"a",
-batch:"1",
-learning:"1"
-},
-    {
-        id:2,name:"a",
-    batch:"1",
-    learning:"1"},
-    { id:3,
-        name:"a",
-    batch:"1",
-    learning:"1"},
-  ]);
-//   useEffect(()=>{
-//   async function getData()
-//        {
-//         const decodedtoken=jwt.decode(localStorage.getItem("token"));
-//         if(decodedtoken.exp * 1000 < Date.now())
-//         {
-//           navigate("/signin");
+  const navigate=useNavigate();
+  const [userdata,setUserdata]=useState([  ]);
+  useEffect(()=>{
+  async function getData()
+       {
+        const decodedtoken=jwt.decode(localStorage.getItem("token"));
+        if(decodedtoken.exp * 1000 < Date.now())
+        {
+          navigate("/signin");
 
-//         }
-// else{
-//     const response= await axios.get("http://localhost:3001/user/get",{
-//         headers:{
-//           accesstoken : localStorage.getItem("token"),
-//         },
-//       });         
-//       setUserdata(response.data);    
-//     }
-//   }
-//     getData();
-// },[]);
+        }
+else{
+    const response= await axios.get("http://localhost:3001/user/get",{
+        headers:{
+          accesstoken : localStorage.getItem("token"),
+        },
+      });         
+      setUserdata(response.data);    
+    }
+  }
+    getData();
+},[]);
     return(
         <div style={{paddingLeft:"50px",paddingRight:"50px"}}>
-          
+          <h1>{userdata.name}</h1>
         <div style={{marginLeft:"50px",marginRight:"50px"}}>
             <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="caption table">
@@ -66,6 +51,9 @@ learning:"1"
         <TableBody>
           {userdata.map((row) => (
             <TableRow key={row.id}>
+                 <TableCell component="th" scope="row">
+                {row.id}
+              </TableCell>
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
