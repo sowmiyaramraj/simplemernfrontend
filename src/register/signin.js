@@ -18,7 +18,7 @@ function Signin(){
             localStorage.setItem("token",responce.data);
         }
         console.log(responce);
-        navigate("/tab");
+        navigate("/user");
 
     }
     return(

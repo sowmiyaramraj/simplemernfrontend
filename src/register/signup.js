@@ -58,7 +58,7 @@ function Signup(){
          batch:"b38 wd tamil",
         });
         setUserStateData([...userStateData,response.data]);
-        navigate("/tab");
+        navigate("/user");
         resetForm();
        
 };

@@ -3,7 +3,7 @@ import './App.css';
 import useState from "react";
 import Signin from "./register/signin";
 import Signup from "./register/signup";
-import Product from "./usersdata";
+import Userdata from "./usersdata";
 
 import {BrowserRouter as Router,Route,Routes} from "react-router-dom";
 import { Buffer } from 'buffer';

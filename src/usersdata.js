@@ -6,10 +6,9 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import Rank from "../images/rank.jpg"
 import axios from "axios";
-function Leadership(){
-  const [leadership,setLeadership]=useState([]);
+function Userdata(){
+  const [userdata,setUserdata]=useState([]);
   useEffect(()=>{
   async function getData()
        {
@@ -21,7 +20,7 @@ function Leadership(){
         }
 else{
         const response= await axios.get("http://localhost:3001/user/get");
-        setLeadership(response.data);    
+        setUserdata(response.data);    
     }
   }
     getData();
@@ -44,7 +43,7 @@ else{
             </TableRow>
         </TableHead>
         <TableBody>
-          {leadership.map((row) => (
+          {userdata.map((row) => (
             <TableRow key={row.id}>
               <TableCell component="th" scope="row">
                 {row.name}
@@ -60,4 +59,4 @@ else{
         </div>
     );
 }
-export default Leadership;
+export default Userdata;
