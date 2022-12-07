@@ -27,9 +27,7 @@ else{
 },[]);
     return(
         <div style={{paddingLeft:"50px",paddingRight:"50px"}}>
-            <div>
-            <img style={{height:"200px",width:"650px"}} src={Rank}/>
-            </div>
+          
         <div style={{marginLeft:"50px",marginRight:"50px"}}>
             <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="caption table">

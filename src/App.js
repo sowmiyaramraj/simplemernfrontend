@@ -4,7 +4,6 @@ import useState from "react";
 import Signin from "./register/signin";
 import Signup from "./register/signup";
 import Userdata from "./usersdata";
-
 import {BrowserRouter as Router,Route,Routes} from "react-router-dom";
 import { Buffer } from 'buffer';
 global.Buffer = Buffer;
@@ -19,7 +18,7 @@ function App() {
             <Route path="/"  element={<Signup/>}/>
             <Route path="/signin" element={<Signin/>}/>          
             <Route path="/signup" element={<Signup/>}/>
-            <Route path="/product" element={<Product/>}/>
+            <Route path="/userdata" element={<Userdata/>}/>
             </Routes>
            </Router>
         </div>
